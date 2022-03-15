@@ -5,17 +5,17 @@
     cursor: pointer;
 }
 
-.row {
-    display: flex;
-}
-
 #chessContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.row.flex-reverse {
+#chessContainer > div {
+    display: flex;
+}
+
+.flex-reverse {
     flex-direction: row-reverse;
 }
 

@@ -1,7 +1,7 @@
 
 let SQAURES_IN_CHECKBOX_PER_ROW_AND_COULUMN = 8;
-let WHITECOLOUR = WHITECOLOUR;
-let BLACKCOLOUR =BLACKCOLOUR;
+let WHITECOLOUR = "white";
+let BLACKCOLOUR = "black";
 
 function Chess(ele) {
     this.element = document.querySelector(ele);
@@ -21,8 +21,6 @@ Chess.prototype.init = function () {
 
         const row = document.createElement('div');
         const rowFragment = document.createDocumentFragment();
-
-        row.classList.add("row");
 
         for (let j = 0; j < SQAURES_IN_CHECKBOX_PER_ROW_AND_COULUMN; j++) {
 
