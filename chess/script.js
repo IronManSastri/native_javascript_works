@@ -1,5 +1,7 @@
 
 let SQAURES_IN_CHECKBOX_PER_ROW_AND_COULUMN = 8;
+let WHITECOLOUR = WHITECOLOUR;
+let BLACKCOLOUR =BLACKCOLOUR;
 
 function Chess(ele) {
     this.element = document.querySelector(ele);
@@ -13,7 +15,7 @@ Chess.prototype.init = function () {
 
     const fragment = document.createDocumentFragment();
 
-    let paintBackgroundColor = "white"
+    let paintBackgroundColor = WHITECOLOUR
 
     for (let i = 0; i < SQAURES_IN_CHECKBOX_PER_ROW_AND_COULUMN; i++) {
 
@@ -26,9 +28,10 @@ Chess.prototype.init = function () {
 
             var square = document.createElement("div");
             square.classList.add("square");
-            square.classList.add(paintBackgroundColor === "white" ? "whiteBackground" : "blackBackground");
+            square.classList.add(paintBackgroundColor === WHITECOLOUR ? "whiteBackground" : "blackBackground");
 
-            paintBackgroundColor = paintBackgroundColor === "black" ? "white" : "black";
+            //to bbgColor the next div color
+            paintBackgroundColor = paintBackgroundColor === BLACKCOLOUR ? WHITECOLOUR :BLACKCOLOUR;
 
             square.dataset.column = j;
             square.dataset.row = i;
@@ -36,7 +39,8 @@ Chess.prototype.init = function () {
             rowFragment.appendChild(square);
         }
 
-        paintBackgroundColor = paintBackgroundColor === "black" ? "white" : "black";
+        //the bgColor to start with in the next row
+        paintBackgroundColor = paintBackgroundColor === BLACKCOLOUR ? WHITECOLOUR :BLACKCOLOUR;
 
         row.appendChild(rowFragment);
         fragment.appendChild(row);
