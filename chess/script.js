@@ -1,7 +1,7 @@
 
-let SQAURES_IN_CHECKBOX_PER_ROW_AND_COULUMN = 8;
-let WHITECOLOUR = "white";
-let BLACKCOLOUR = "black";
+const SQAURES_IN_CHECKBOX_PER_ROW_AND_COULUMN = 8;
+const WHITECOLOUR = "white";
+const BLACKCOLOUR = "black";
 
 function Chess(ele) {
     this.element = document.querySelector(ele);
